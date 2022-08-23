@@ -33,9 +33,6 @@ export default function NavBar() {
           <Typography variant="h5" component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             Neil Hanson
           </Typography>
-          <Typography component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            - Fullstack Software Developement
-          </Typography>
           <NavTabs />
         </Toolbar>
       </AppBar>
