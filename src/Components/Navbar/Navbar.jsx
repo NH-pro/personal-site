@@ -17,7 +17,7 @@ export default function NavBar() {
       <AppBar 
         position="static"
         sx={{
-            backgroundColor: '#5246A6',
+            backgroundColor: '#5246A6'
         }}
       >
         <Toolbar >
