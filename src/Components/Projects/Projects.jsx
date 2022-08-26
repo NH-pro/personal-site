@@ -1,8 +1,25 @@
+// Imports
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+// Api Imports
+import { getProjectsFetch } from '../../redux/reducers/projectsSlice';
+
 // MUI Imports
 import { Grid, Stack, Card } from "@mui/material";
 
-
 function Projects() {
+    const projects = useSelector(state => state.projects.projects);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(
+            getProjectsFetch()
+        )
+    }, [dispatch]);
+
+    console.log('this is projects', projects);
+
     return (
         <Grid
             container
@@ -20,7 +37,6 @@ function Projects() {
                         minHeight: '350px'
                     }}
                 >
-                    Project 1
                 </Card>
             </Stack>
         </Grid>

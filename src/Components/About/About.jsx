@@ -1,5 +1,5 @@
 // MUI Imports
-import { Grid, Stack, Card } from "@mui/material";
+import { Grid } from "@mui/material";
 
 function About() {
     return (
