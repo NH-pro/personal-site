@@ -37,6 +37,19 @@ function Projects() {
                         minHeight: '350px'
                     }}
                 >
+                    {projects.map((item) => {
+                        return(
+                            <div
+                                key={item.id}
+                            >
+                                <h2>{item.name}</h2>
+                                <ul>
+                                    <li>Duration: {item.duration}</li>
+                                    <li>{item.description}</li>
+                                </ul>
+                            </div>
+                        )
+                    })}
                 </Card>
             </Stack>
         </Grid>

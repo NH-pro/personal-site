@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         res.send(result.rows);
       })
       .catch(err => {
-        console.log('ERROR: Get all movies', err);
+        console.log('Error in Projects Router GET', err);
         res.sendStatus(500)
       })
   

@@ -1,6 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
-import { getProjectsSuccess } from './reducers/projectsSlice';
+import { getProjectsSuccess } from '../reducers/projectsSlice';
 
 function* workGetProjectsFetch() {
     try {
