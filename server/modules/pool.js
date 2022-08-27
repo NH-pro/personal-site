@@ -1,16 +1,8 @@
-/**
-* You'll need to use environment variables in order to deploy your
-* pg-pool configuration to Heroku.
-* It will look something like this:
-**/
-
-const pg = require('pg');
+const pg = require('pg'); // Postgres
 const url = require('url');
 let config = {};
 
 if (process.env.DATABASE_URL) {
-    // Heroku gives a url, not a connection object
-    // https://github.com/brianc/node-pg-pool
     let params = url.parse(process.env.DATABASE_URL);
     let auth = params.auth.split(':');
 
@@ -21,19 +13,19 @@ if (process.env.DATABASE_URL) {
         port: params.port,
         database: params.pathname.split('/')[1],
         ssl: { rejectUnauthorized: false },
-        max: 10, // max number of clients in the pool
-        idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
+        max: 10,
+        idleTimeoutMillis: 30000,
     };
 
 } else {
     config = {
-        user: process.env.PG_USER || null, //env var: PGUSER
-        password: process.env.DATABASE_SECRET || null, //env var: PGPASSWORD
+        user: process.env.PG_USER || null,
+        password: process.env.DATABASE_SECRET || null,
         host: process.env.DATABASE_SERVER || 'localhost', // Server hosting the postgres database
         port: process.env.DATABASE_PORT || 5432, //env var: PGPORT
-        database: process.env.DATABASE_NAME || 'personal-website', //env var: PGDATABASE or the name
-        max: 10, // max number of clients in the pool
-        idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
+        database: process.env.DATABASE_NAME || 'personal-website', //env var: PGDATABASE or DB name
+        max: 10,
+        idleTimeoutMillis: 30000,
     };
 }
 
