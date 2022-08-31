@@ -30,6 +30,9 @@ function Projects() {
         >
             <Stack
                 spacing={1}
+                sx={{
+                    margin: '1em'
+                }}
             >
                 <GitHubRepos />
                     {/* {projects.map((item) => {

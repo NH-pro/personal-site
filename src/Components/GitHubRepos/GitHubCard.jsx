@@ -1,15 +1,16 @@
 // MUI Imports
 import { Card, Typography } from "@mui/material";
 
+// Exported component function
 function GitHubCard(gitPin) {
     const gitData = gitPin.gitPin;
 
+    // When user clicks on a project card, open a new tab to the project's url
     function clickHandle(url) {
         window.open(url, '_blank').focus();
     }
 
-
-    console.log('this is gitData', gitData);
+    // Return render
     return (
         <Card
             onClick={() => clickHandle(gitData.node.url)}
