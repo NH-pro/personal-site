@@ -28,7 +28,9 @@ function Projects() {
             justifyContent="center"
             alignItems="center"
         >
-            <Stack>
+            <Stack
+                spacing={1}
+            >
                 <GitHubRepos />
                     {/* {projects.map((item) => {
                         return(
