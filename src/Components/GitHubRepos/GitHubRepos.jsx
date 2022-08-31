@@ -1,4 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
+import GitHubCard from "./GitHubCard";
 
 const GITHUB_QUERY = gql`
 {
@@ -29,12 +30,18 @@ const GitHubRepos = () => {
 
     if (loading) return "Loading...";
     if (error) return <pre>{error.message}</pre>
-
-    console.log('this is github data', data);
     return(
         <>
+            {data.user.pinnedItems.edges.map((pinnedRepo) => {
+                return (
+                    <GitHubCard 
+                        key={pinnedRepo.node.id}
+                        gitPin={pinnedRepo}
+                    />
+                )
+             })}
         </>
     )
-
 }
+        
 export default GitHubRepos;

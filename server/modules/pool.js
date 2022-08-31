@@ -1,3 +1,6 @@
+// This connects my server to a database if I wanted to use one.
+// This is currently set up to be deployed on heroku
+
 const pg = require('pg'); // Postgres
 const url = require('url');
 let config = {};

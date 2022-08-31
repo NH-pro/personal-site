@@ -1,24 +1,25 @@
-// Imports
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// --- Imports to use a database ---
+// import { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { getProjectsFetch } from '../../redux/reducers/projectsSlice';
 
-// Api Imports
-import { getProjectsFetch } from '../../redux/reducers/projectsSlice';
+// Component Imports
+import GitHubRepos from "../GitHubRepos/GitHubRepos";
 
 // MUI Imports
-import { Grid, Stack, Card } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 
 function Projects() {
-    const projects = useSelector(state => state.projects.projects);
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(
-            getProjectsFetch()
-        )
-    }, [dispatch]);
+    // --- Stuff to use if I wanted to use a database ---
+    // const projects = useSelector(state => state.projects.projects);
+    // const dispatch = useDispatch();
 
-    console.log('this is projects', projects);
+    // useEffect(() => {
+    //     dispatch(
+    //         getProjectsFetch()
+    //     )
+    // }, [dispatch]);
 
     return (
         <Grid
@@ -28,16 +29,8 @@ function Projects() {
             alignItems="center"
         >
             <Stack>
-                <Card
-                    elevation={4}
-                    sx={{
-                        padding: "1em",
-                        margin: '1em',
-                        width: '350px',
-                        minHeight: '350px'
-                    }}
-                >
-                    {projects.map((item) => {
+                <GitHubRepos />
+                    {/* {projects.map((item) => {
                         return(
                             <div
                                 key={item.id}
@@ -49,8 +42,7 @@ function Projects() {
                                 </ul>
                             </div>
                         )
-                    })}
-                </Card>
+                    })} */}
             </Stack>
         </Grid>
     )

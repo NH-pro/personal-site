@@ -1,8 +1,6 @@
 // MUI Imports
 import { Grid } from "@mui/material";
 
-import GitHubRepos from "../GitHubRepos/GitHubRepos";
-
 function About() {
     return (
         <Grid
@@ -11,7 +9,6 @@ function About() {
             justifyContent="center"
             alignItems="center"
         >
-            <GitHubRepos />
         </Grid>
     )
 }

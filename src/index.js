@@ -12,11 +12,12 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import projectsSaga from './redux/sagas/projectsSaga';
 
 
-// Apollo Stuff
+// Apollo
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {
-    Authentication: `bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+    // Token needs to start with "REACT_APP_" so React will be able to read it.
+    Authorization: `bearer ${process.env.REACT_APP_GITHUB_ACCESS_TOKEN}`,
   },
   cache: new InMemoryCache(),
 });
