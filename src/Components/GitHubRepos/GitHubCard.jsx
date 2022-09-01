@@ -34,13 +34,13 @@ function GitHubCard(gitPin) {
                 {gitData.node.name}
             </Typography>
             <Typography
-                sx={{
-                    fontWeight: 'bold'
-                }}
             >
                 Created on: {gitDate}
             </Typography>
             <Typography
+                sx={{
+                    padding: '1em'
+                }}
             >
                 {gitData.node.description}
             </Typography>

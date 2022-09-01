@@ -2,3 +2,10 @@ body {
     background-color: black;
     background-image: url("https://images.pexels.com/photos/8892/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
+
+.mePic {
+    max-width: 25%;
+    border-radius: 10px;
+    border: 2px solid yellow;
+    box-shadow: '0 0 20px rgba(43, 247, 213, 0.62)';
+}

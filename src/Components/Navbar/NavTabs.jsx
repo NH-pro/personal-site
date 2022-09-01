@@ -21,7 +21,15 @@ function NavTabs() {
     }
         
         return (
-            <Tabs value={viewList} onChange={handleChange} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Tabs 
+                value={viewList}
+                onChange={handleChange}
+                sx={{
+                    flexGrow: 1,
+                    display: { xs: 'none', md: 'flex' },
+                    maxWidth: 'min-content'
+                }}
+            >
                 <Tab value="/" label="About"/>
                 <Tab value="/projects" label="Projects"/>
                 <Tab value="/contact" label="Contact"/>
