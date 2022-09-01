@@ -29,9 +29,9 @@ function Projects() {
             alignItems="center"
         >
             <Stack
-                spacing={1}
+                spacing={2}
                 sx={{
-                    margin: '1em'
+                    margin: '1em 5em',
                 }}
             >
                 <GitHubRepos />

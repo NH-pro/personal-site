@@ -10,23 +10,35 @@ function GitHubCard(gitPin) {
         window.open(url, '_blank').focus();
     }
 
+    // Reformat repo creation date
+    const gitDate = new Date(gitData.node.createdAt).toLocaleDateString();
+
     // Return render
     return (
         <Card
             onClick={() => clickHandle(gitData.node.url)}
             elevation={4}
             sx={{
-                padding: '1em'
+                padding: '1em',
+                backgroundColor: 'rgba(135, 217, 226, 0.90)',
+                border: '2px solid rgb(15, 255, 215)',
+                boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)'
             }}
         >
             <Typography
                 variant="h5"
+                sx={{
+                    fontWeight: 'bold'
+                }}
             >
                 {gitData.node.name}
             </Typography>
             <Typography
+                sx={{
+                    fontWeight: 'bold'
+                }}
             >
-                {gitData.node.createdAt}
+                Created on: {gitDate}
             </Typography>
             <Typography
             >

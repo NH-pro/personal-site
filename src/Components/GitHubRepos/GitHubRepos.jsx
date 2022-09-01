@@ -28,7 +28,7 @@ const GITHUB_QUERY = gql`
 const GitHubRepos = () => {
     const { loading, error, data } = useQuery(GITHUB_QUERY);
 
-    if (loading) return "Loading...";
+    if (loading) return "Fetching my repos from GitHub!";
     if (error) return <pre>{error.message}</pre>
     return(
         <>
