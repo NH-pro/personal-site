@@ -8,11 +8,11 @@ function About() {
     return (
         <Grid
             container
-            direction="column"
+            direction="row"
             justifyContent="center"
             alignItems="center"
             sx={{
-                marginTop: '5em'
+                marginTop: '7em'
             }}
         >
             <GitHubProfile />
