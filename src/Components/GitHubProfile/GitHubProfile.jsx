@@ -2,7 +2,7 @@
 import { useQuery, gql } from "@apollo/client";
 
 // MUI Imports
-import { Card, Typography } from "@mui/material";
+import { Card, Typography, Stack } from "@mui/material";
 
 const GITHUB_QUERY = gql `
 {
@@ -25,7 +25,11 @@ const GitHubProfile = () => {
     if (error) return <pre>{error.message}</pre>
 
     return(
-        <>
+        <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+        >
             <img 
                 alt="picMe"
                 className="mePic"
@@ -39,7 +43,8 @@ const GitHubProfile = () => {
                     padding: '1em',
                     backgroundColor: 'rgba(135, 217, 226, 0.90)',
                     border: '2px solid rgb(15, 255, 215)',
-                    boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)'
+                    boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)',
+                    maxWidth: '900px'
                 }}
             >
                 <Typography
@@ -48,7 +53,7 @@ const GitHubProfile = () => {
                     Hi, my name is Neil and welcome to my web page!
                 </Typography>
             </Card>
-        </>
+        </Stack>
     )
 }
         
