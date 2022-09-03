@@ -9,4 +9,25 @@ body {
     border: 2px solid yellow;
     box-shadow: 0 0 20px yellow;
     margin: 2em;
+    transition: transform .2s;
 }
+
+.banana {
+    max-width: 70px;
+    background-color: inherit;
+}
+
+.mePic:hover {
+    transform: scale(1.1);
+    /* animation: keyframe-test 1s linear infinite; */
+}
+
+/* @keyframes keyframe-test {
+    0% {
+        
+    }
+    100% {
+        opacity: .1;
+    }
+} */
+

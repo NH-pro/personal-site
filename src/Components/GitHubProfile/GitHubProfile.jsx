@@ -18,6 +18,9 @@ function picClickHandle(url) {
     window.open(url, '_blank').focus();
 }
 
+function mouseOverHandle() {
+}
+
 const GitHubProfile = () => {
     const { loading, error, data } = useQuery(GITHUB_QUERY);
 
@@ -30,11 +33,18 @@ const GitHubProfile = () => {
             justifyContent="center"
             alignItems="center"
         >
+            <img
+                className="banana"
+                alt="bananaPic"
+                src="../images/banana.png"
+                hidden
+            />
             <img 
-                alt="picMe"
                 className="mePic"
+                alt="picMe"
                 src={data.user.avatarUrl}
                 onClick={() => picClickHandle(data.user.url)}
+                onMouseOver={() => mouseOverHandle()}
             />
             <Card
                 elevation={4}

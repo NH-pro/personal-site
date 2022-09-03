@@ -28,7 +28,7 @@ function Projects() {
             justifyContent="center"
             alignItems="center"
             sx={{
-                marginTop: '5em'
+                marginTop: '6em'
             }}
         >
             <Stack
