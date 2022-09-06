@@ -28,6 +28,7 @@ body {
 
 @keyframes keyframe-test {
     0% {
+        
     }
     25% {
         opacity: .75;
