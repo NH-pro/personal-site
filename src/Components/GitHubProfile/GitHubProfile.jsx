@@ -4,6 +4,9 @@ import { useQuery, gql } from "@apollo/client";
 // MUI Imports
 import { Card, Typography, Stack } from "@mui/material";
 
+// Component Imports
+import CreateBanana from "../Banana/CreateBanana";
+
 const GITHUB_QUERY = gql `
 {
     user(login: "NH-pro") {
@@ -18,7 +21,8 @@ function picClickHandle(url) {
     window.open(url, '_blank').focus();
 }
 
-function mouseOverHandle() {
+function mouseOverMeHandle() {
+    CreateBanana();
 }
 
 const GitHubProfile = () => {
@@ -29,23 +33,22 @@ const GitHubProfile = () => {
 
     return(
         <Stack
+            id="gitHubProfile"
             direction="row"
             justifyContent="center"
             alignItems="center"
         >
-            <img
-                className="banana"
-                alt="bananaPic"
-                src="../images/banana.png"
-                hidden
-            />
-            <img 
-                className="mePic"
-                alt="picMe"
-                src={data.user.avatarUrl}
-                onClick={() => picClickHandle(data.user.url)}
-                onMouseOver={() => mouseOverHandle()}
-            />
+            <div
+                id="imageBox"
+            >
+                <img 
+                    className="mePic"
+                    alt="picMe"
+                    src={data.user.avatarUrl}
+                    onClick={() => picClickHandle(data.user.url)}
+                    onMouseOver={() => mouseOverMeHandle()}
+                />
+            </div>
             <Card
                 elevation={4}
                 sx={{

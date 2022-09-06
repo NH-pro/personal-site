@@ -12,22 +12,29 @@ body {
     transition: transform .2s;
 }
 
-.banana {
-    max-width: 70px;
-    background-color: inherit;
-}
-
 .mePic:hover {
     transform: scale(1.1);
-    /* animation: keyframe-test 1s linear infinite; */
 }
 
-/* @keyframes keyframe-test {
+.banana {
+    max-width: 70px;
+    opacity: 0;
+    position: absolute;
+    animation: keyframe-test 2s ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    transform-origin: 50px 50px;
+}
+
+@keyframes keyframe-test {
     0% {
-        
+    }
+    25% {
+        opacity: .75;
     }
     100% {
-        opacity: .1;
+        transform: translate(500px) rotate(360deg);
+        opacity: 1;
     }
-} */
+}
 
