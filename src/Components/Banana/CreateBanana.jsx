@@ -1,10 +1,8 @@
 function bananaClickHandle() {
-    console.log('Hello, I am a banana!');
+    document.getElementById(`bananaId`).remove();
 }
 
 function CreateBanana() {
-    console.log('Created new banana!')
-
     // This defines a new creation of the banana element
     const newBananaImage = document.createElement("img");
 
@@ -23,7 +21,6 @@ function CreateBanana() {
     // Delete old bananas
     setTimeout(() => {
         document.getElementById(`bananaId`).remove();
-        console.log('Removed old banana!')
     }, 4000)
 }
 
