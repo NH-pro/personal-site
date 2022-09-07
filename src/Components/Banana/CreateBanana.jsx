@@ -24,14 +24,12 @@ function CreateBanana() {
     setTimeout(() => {
         if(document.getElementById(`bananaId${bananaId}`)) {
             document.getElementById(`bananaId${bananaId}`).remove();
-            console.log('The banana got away, better luck next time.')
         }
     }, 4000)
 
-    // Delete clicked bananas and add them to the scoreboard
+    // Delete clicked bananas
     function bananaClickHandle() {
         document.getElementById(`bananaId${bananaId}`).remove();
-        console.log('You got the banana!')
     }
 }
 

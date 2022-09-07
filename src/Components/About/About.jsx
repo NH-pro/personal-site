@@ -39,7 +39,7 @@ function About() {
                 <Typography>
                     I like to write my code with purpose and actively make efforts to keep it organized and easy to understand.
                     I'm always looking for cool new tools to try and implement into my projects.
-                    Love chatting about tabletop games 🎲 , disc golf 🥏, and how much I like icecream!🍦
+                    Love chatting about tabletop games 🎲 and disc golf 🥏.
                 </Typography>
             </Card>
             
