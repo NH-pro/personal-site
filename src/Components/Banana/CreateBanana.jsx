@@ -24,7 +24,7 @@ function CreateBanana() {
     setTimeout(() => {
         if(document.getElementById(`bananaId${bananaId}`)) {
             document.getElementById(`bananaId${bananaId}`).remove();
-            console.log('Banana timed out, so it was removed.')
+            console.log('The banana got away, better luck next time.')
         }
     }, 4000)
 

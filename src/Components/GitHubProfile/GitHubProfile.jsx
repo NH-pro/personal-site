@@ -21,10 +21,6 @@ function picClickHandle(url) {
     window.open(url, '_blank').focus();
 }
 
-function mouseOverMeHandle() {
-    CreateBanana();
-}
-
 const GitHubProfile = () => {
     const { loading, error, data } = useQuery(GITHUB_QUERY);
 
@@ -46,7 +42,7 @@ const GitHubProfile = () => {
                     alt="picMe"
                     src={data.user.avatarUrl}
                     onClick={() => picClickHandle(data.user.url)}
-                    onMouseOver={() => mouseOverMeHandle()}
+                    onMouseOver={() => CreateBanana()}
                 />
             </div>
             <Card
