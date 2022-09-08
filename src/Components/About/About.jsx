@@ -12,7 +12,7 @@ function About() {
             justifyContent="center"
             alignItems="center"
             sx={{
-                marginTop: '6em',
+                marginTop: '4em',
             }}
         >
             <GitHubProfile />

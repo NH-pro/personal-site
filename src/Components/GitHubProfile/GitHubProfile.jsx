@@ -39,11 +39,13 @@ const GitHubProfile = () => {
             direction="row"
             justifyContent="center"
             alignItems="center"
+            sx={{
+                marginTop: '2em'
+            }}
         >
-            <div
-                id="imageBox"
-            >
+            <div id="imageBox">
                 <img 
+                    id=""
                     className="mePic"
                     alt="picMe"
                     src={data.user.avatarUrl}
@@ -51,26 +53,51 @@ const GitHubProfile = () => {
                     onMouseOver={() => CreateBanana(dispatch)}
                 />
             </div>
-            <Card
-                elevation={4}
-                sx={{
-                    margin: '2em',
-                    padding: '1em',
-                    backgroundColor: 'rgba(135, 217, 226, 0.90)',
-                    border: '2px solid rgb(15, 255, 215)',
-                    boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)',
-                    maxWidth: '900px'
-                }}
+            <Stack
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                spacing={3}
             >
-                <Typography
-                    variant="h5"
+                <Card
+                    elevation={4}
+                    sx={{
+                        padding: '1em',
+                        backgroundColor: 'rgba(135, 217, 226, 0.90)',
+                        border: '2px solid rgb(15, 255, 215)',
+                        boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)',
+                        maxWidth: '900px'
+                    }}
                 >
-                    Hi, my name is Neil and welcome to my web page!
-                </Typography>
-                <div>
-                    <h3>Missed: {bananaStore.missed} Caught: {bananaStore.caught}</h3>
-                </div>
-            </Card>
+                    <Typography
+                        variant="h5"
+                    >
+                        Hi, my name is Neil and welcome to my web page!
+                    </Typography>
+                </Card>
+                <Card
+                    elevation={4}
+                    sx={{
+                        padding: '.5em',
+                        backgroundColor: 'rgba(135, 217, 226, 0.90)',
+                        border: '2px solid rgb(15, 255, 215)',
+                        boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)',
+                        minWidth: '550px',
+                        maxWidth: '1000px',
+                        textAlign: 'center'
+                    }}
+                >
+                    <h2>Catch the Banana!</h2>
+                    <h3> ⬅ Hover over my picture to send a banana!</h3>
+                    <h4>
+                        Missed: {bananaStore.missed}
+                        <br/>
+                        Caught: {bananaStore.caught}
+                        <br/>
+                        Catch Average: {Math.round((bananaStore.caught / (bananaStore.missed + bananaStore.caught)) * 100) / 100}
+                    </h4>
+                </Card>
+            </Stack>
         </Stack>
     )
 }
