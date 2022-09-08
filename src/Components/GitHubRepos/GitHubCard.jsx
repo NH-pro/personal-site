@@ -23,7 +23,8 @@ function GitHubCard(gitPin) {
                 backgroundColor: 'rgba(135, 217, 226, 0.90)',
                 border: '2px solid rgb(15, 255, 215)',
                 boxShadow: '0 0 20px rgba(43, 247, 213, 0.62)',
-                maxWidth: '900px'
+                maxWidth: '900px',
+                cursor: 'pointer'
             }}
         >
             <Typography
