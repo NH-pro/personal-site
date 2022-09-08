@@ -1,6 +1,7 @@
 let bananaIdNumCount = 0;
 
-function CreateBanana() {
+function CreateBanana(prop) {
+
     bananaIdNumCount ++;
 
     const bananaId = bananaIdNumCount;
@@ -24,12 +25,18 @@ function CreateBanana() {
     setTimeout(() => {
         if(document.getElementById(`bananaId${bananaId}`)) {
             document.getElementById(`bananaId${bananaId}`).remove();
+            prop({
+                type: 'MISSED_BANANA'
+            })
         }
     }, 4000)
 
     // Delete clicked bananas
     function bananaClickHandle() {
         document.getElementById(`bananaId${bananaId}`).remove();
+        prop({
+            type: 'CAUGHT_BANANA'
+        })
     }
 }
 

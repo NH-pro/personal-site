@@ -1,34 +1,37 @@
 // Apollo Imports
 import { useQuery, gql } from "@apollo/client";
-
 // MUI Imports
 import { Card, Typography, Stack } from "@mui/material";
-
 // Component Imports
 import CreateBanana from "../Banana/CreateBanana";
-
 // Store Imports
+import { useSelector, useDispatch } from "react-redux";
 
-
-const GITHUB_QUERY = gql `
-{
-    user(login: "NH-pro") {
-      avatarUrl
-      bio
-      url
-    }
-  }
-`;
-
-function picClickHandle(url) {
-    window.open(url, '_blank').focus();
-}
 
 const GitHubProfile = () => {
-    const { loading, error, data } = useQuery(GITHUB_QUERY);
+    const dispatch = useDispatch();
 
+    // Banana Redux Store
+    const bananaStore = useSelector((state) => state.bananaReducer)
+
+    // Apollo GraphQl Query
+    const GITHUB_QUERY = gql `
+        {
+            user(login: "NH-pro") {
+            avatarUrl
+            bio
+            url
+            }
+        }
+    `;
+    const { loading, error, data } = useQuery(GITHUB_QUERY);
     if (loading) return "Fetching my profile from GitHub!";
     if (error) return <pre>{error.message}</pre>
+    
+
+    function picClickHandle(url) {
+        window.open(url, '_blank').focus();
+    }    
 
     return(
         <Stack
@@ -45,7 +48,7 @@ const GitHubProfile = () => {
                     alt="picMe"
                     src={data.user.avatarUrl}
                     onClick={() => picClickHandle(data.user.url)}
-                    onMouseOver={() => CreateBanana()}
+                    onMouseOver={() => CreateBanana(dispatch)}
                 />
             </div>
             <Card
@@ -64,6 +67,9 @@ const GitHubProfile = () => {
                 >
                     Hi, my name is Neil and welcome to my web page!
                 </Typography>
+                <div>
+                    <h3>Missed: {bananaStore.missed} Caught: {bananaStore.caught}</h3>
+                </div>
             </Card>
         </Stack>
     )
