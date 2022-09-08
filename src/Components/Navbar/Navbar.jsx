@@ -8,8 +8,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-// import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
+
 
 export default function NavBar() {
   return (
@@ -22,26 +21,18 @@ export default function NavBar() {
         }}
       >
         <Toolbar >
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            <MenuIcon />
-          </IconButton> */}
           <Typography 
             variant="h5"
             component="div"
             sx={{ 
               flexGrow: 1,
               display: { xs: 'none', md: 'flex' },
-              marginLeft: '5em',
-              color: 'black'
+              marginLeft: '6em',
+              color: 'white',
+              textShadow: '-2px 0 black, 0 2px black, 2px 0 black, 0 -2px black',
             }}
           >
-            Neil Hanson
+            Neil Hanson - Software Developer
           </Typography>
           <NavTabs />
         </Toolbar>

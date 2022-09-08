@@ -3,7 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // MUI Imports
-import { Tabs, Tab } from "@mui/material";
+import { Tabs, Tab, ThemeProvider } from "@mui/material";
+
+// Component Imports
+import ColorTheme from "../ColorTheme/ColorTheme";
 
 // Exported function component
 function NavTabs() {
@@ -19,21 +22,25 @@ function NavTabs() {
         setViewList(newValue);
         navigate(`${newValue}`);
     }
+
         
-        return (
+    return (
+        <ThemeProvider theme={ColorTheme}>
             <Tabs 
                 value={viewList}
                 onChange={handleChange}
                 sx={{
                     flexGrow: 1,
                     display: { xs: 'none', md: 'flex' },
-                    maxWidth: 'min-content'
+                    maxWidth: 'min-content',
                 }}
+                textColor="secondary"
+                indicatorColor="secondary"
             >
-                <Tab value="/" label="About"/>
-                <Tab value="/projects" label="Projects"/>
-                <Tab value="/contact" label="Contact"/>
+                <Tab value="/" label="About" sx={{fontWeight: 'bold'}}/>
+                <Tab value="/projects" label="Projects" sx={{fontWeight: 'bold'}}/>
             </Tabs>
-        )
-    }
+        </ThemeProvider>
+    )
+}
 export default NavTabs;
