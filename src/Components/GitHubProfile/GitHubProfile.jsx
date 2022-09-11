@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 // MUI Imports
 import { Card, Typography, Stack } from "@mui/material";
 // Component Imports
-import CreateBanana from "../Banana/CreateBanana";
+import CreateBanana from "../../utils/banana/createBanana";
 // Store Imports
 import { useSelector, useDispatch } from "react-redux";
 

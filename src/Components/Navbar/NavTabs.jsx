@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Tabs, Tab, ThemeProvider } from "@mui/material";
 
 // Component Imports
-import ColorTheme from "../ColorTheme/ColorTheme";
+import ColorTheme from "../../utils/muiColorTheme/colorTheme";
 
 // Exported function component
 function NavTabs() {
