@@ -1,6 +1,7 @@
 let bananaIdNumCount = 0;
 
-function CreateBanana(prop) {
+function CreateBanana(bananaScore, setBananaScore) {
+    console.log('This is bananaScore', bananaScore);
     // Increment id number
     bananaIdNumCount ++;
 
@@ -25,18 +26,20 @@ function CreateBanana(prop) {
     setTimeout(() => {
         if(document.getElementById(`bananaId${bananaId}`)) {
             document.getElementById(`bananaId${bananaId}`).remove();
-            prop({
-                type: 'MISSED_BANANA'
-            })
+            // prop({
+            //     type: 'MISSED_BANANA'
+            // })
+            setBananaScore({...bananaScore, missed: bananaScore.missed + 1});
         }
     }, 4000)
 
     // Delete clicked bananas
     function bananaClickHandle() {
         document.getElementById(`bananaId${bananaId}`).remove();
-        prop({
-            type: 'CAUGHT_BANANA'
-        })
+        // prop({
+        //     type: 'CAUGHT_BANANA'
+        // })
+        setBananaScore({...bananaScore, caught: bananaScore.caught + 1});
     }
 }
 export default CreateBanana;

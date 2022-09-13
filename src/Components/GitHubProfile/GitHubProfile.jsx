@@ -5,14 +5,17 @@ import { Card, Typography, Stack } from "@mui/material";
 // Component Imports
 import CreateBanana from "../../utils/banana/createBanana";
 // Store Imports
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 
 
 const GitHubProfile = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+
+    const [bananaScore, setBananaScore] = useState({missed: 0, caught: 0})
 
     // Banana Redux Store
-    const bananaStore = useSelector((state) => state.bananaReducer)
+    // const bananaStore = useSelector((state) => state.bananaReducer)
 
     // Apollo GraphQl Query
     const GITHUB_QUERY = gql `
@@ -50,7 +53,7 @@ const GitHubProfile = () => {
                     alt="picMe"
                     src={data.user.avatarUrl}
                     onClick={() => picClickHandle(data.user.url)}
-                    onMouseOver={() => CreateBanana(dispatch)}
+                    onMouseOver={() => CreateBanana(setBananaScore)}
                 />
             </div>
             <Stack
@@ -90,11 +93,11 @@ const GitHubProfile = () => {
                     <h2>Catch the Banana!</h2>
                     <h3> ⬅ Hover over my picture to send a banana!</h3>
                     <h4>
-                        Missed: {bananaStore.missed}
+                        Missed: {bananaScore.missed}
                         <br/>
-                        Caught: {bananaStore.caught}
+                        Caught: {bananaScore.caught}
                         <br/>
-                        Catch Average: {Math.round((bananaStore.caught / (bananaStore.missed + bananaStore.caught)) * 100) / 100}
+                        Catch Average: {Math.round((bananaScore.caught / (bananaScore.missed + bananaScore.caught)) * 100) / 100}
                     </h4>
                 </Card>
             </Stack>
