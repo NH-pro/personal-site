@@ -1,6 +1,10 @@
+// Apollo Imports
 import { useQuery, gql } from "@apollo/client";
+// Component Imports
 import GitHubCard from "./GitHubCard";
 
+
+// GraphQL query
 const GITHUB_QUERY = gql`
 {
     user(login: "NH-pro") {
@@ -21,6 +25,7 @@ const GITHUB_QUERY = gql`
   }
 `;
 
+// Exported component
 const GitHubRepos = () => {
     const { loading, error, data } = useQuery(GITHUB_QUERY);
 
@@ -39,6 +44,5 @@ const GitHubRepos = () => {
              })}
         </>
     )
-}
-        
+} 
 export default GitHubRepos;

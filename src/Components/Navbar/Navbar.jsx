@@ -1,16 +1,13 @@
-import * as React from 'react';
-
 // Component Imports
 import NavTabs from './NavTabs';
-
 // MUI Imports
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-
-export default function NavBar() {
+// Exported component
+function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar 
@@ -40,3 +37,5 @@ export default function NavBar() {
     </Box>
   );
 }
+
+export default NavBar;
