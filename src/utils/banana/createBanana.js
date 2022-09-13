@@ -1,7 +1,7 @@
 let bananaIdNumCount = 0;
 
 function CreateBanana(prop) {
-
+    // Increment id number
     bananaIdNumCount ++;
 
     const bananaId = bananaIdNumCount;
@@ -39,5 +39,4 @@ function CreateBanana(prop) {
         })
     }
 }
-
 export default CreateBanana;

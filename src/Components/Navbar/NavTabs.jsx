@@ -1,16 +1,14 @@
-// Imports
+// React Imports
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 // MUI Imports
 import { Tabs, Tab, ThemeProvider } from "@mui/material";
-
 // Component Imports
 import ColorTheme from "../../utils/muiColorTheme/colorTheme";
 
-// Exported function component
-function NavTabs() {
 
+// Exported component
+function NavTabs() {
     // Local state
     const [viewList, setViewList] = useState('/');
 
@@ -22,8 +20,7 @@ function NavTabs() {
         setViewList(newValue);
         navigate(`${newValue}`);
     }
-
-        
+  
     return (
         <ThemeProvider theme={ColorTheme}>
             <Tabs 

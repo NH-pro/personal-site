@@ -1,26 +1,11 @@
-// --- Imports to use a database ---
-// import { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { getProjectsFetch } from '../../redux/reducers/projectsSlice';
-
 // Component Imports
 import GitHubRepos from "../GitHubRepos/GitHubRepos";
-
 // MUI Imports
 import { Grid, Stack } from "@mui/material";
 
+
+// Exported component
 function Projects() {
-
-    // --- Stuff to use if I wanted to use a database ---
-    // const projects = useSelector(state => state.projects.projects);
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(
-    //         getProjectsFetch()
-    //     )
-    // }, [dispatch]);
-
     return (
         <Grid
             container
@@ -38,19 +23,6 @@ function Projects() {
                 }}
             >
                 <GitHubRepos />
-                    {/* {projects.map((item) => {
-                        return(
-                            <div
-                                key={item.id}
-                            >
-                                <h2>{item.name}</h2>
-                                <ul>
-                                    <li>Duration: {item.duration}</li>
-                                    <li>{item.description}</li>
-                                </ul>
-                            </div>
-                        )
-                    })} */}
             </Stack>
         </Grid>
     )

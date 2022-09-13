@@ -5,16 +5,10 @@ import App from './Components/App/App';
 // Redux Imports
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import createSagaMiddleware from '@redux-saga/core';
-import projectsSlice from './redux/reducers/projectsSlice';
-import bananaReducer from './redux/reducers/bananaReducer';
+import bananaReducer from './reducers/bananaReducer';
 
 // Apollo Imports
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-// Sagas Imports
-import projectsSaga from './redux/sagas/projectsSaga';
-
 
 // Apollo
 const client = new ApolloClient({
@@ -26,17 +20,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const saga = createSagaMiddleware();
-
 const store = configureStore({
   reducer: {
     bananaReducer,
-    projects: projectsSlice
-  },
-  middleware: [saga]
+  }
 })
-
-saga.run(projectsSaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
